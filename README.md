@@ -20,5 +20,10 @@ docker build -t multipletest .
 ### Using the image
 
 ```bash
-docker run --rm -i -v $PWD:/workspace -t multipletest <data_filename.csv> > out.latex 
+docker run --rm -i -v $PWD:/workspace -t multipletest input.csv > output.latex
 ```
+
+## Notes
+
+- CSV files generated with Pandas need to be modified so that the first cell is not empty, otherwise the Java program crashes.
+- Ranks start in 0 instead of 1.
